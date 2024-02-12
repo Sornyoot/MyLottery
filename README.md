@@ -1,0 +1,2 @@
+# MyLottery
+Lottery Test
