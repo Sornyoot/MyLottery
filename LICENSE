@@ -17,4 +17,6 @@ pip3 install --user --upgrade Cython==0.29.33 virtualenv  # the --user should be
 buildozer init
 
 buildozer android debug deploy run
+buildozer -v android debug deploy run logcat
 
+requirements = python3,pyautogui,kivyontop,kivy==2.0.0,pynput,pillow
