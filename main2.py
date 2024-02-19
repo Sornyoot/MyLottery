@@ -1,4 +1,4 @@
-import pyautogui
+
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.core.window import Window
@@ -8,7 +8,7 @@ from datetime import datetime
 from datetime import timedelta
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
-pyautogui.useImageNotFoundException()
+
 Window.size = (540, 30)
 class MainScreen(BoxLayout):
     loop_thread = None
@@ -38,37 +38,14 @@ class MainScreen(BoxLayout):
             self.loop_thread = Clock.schedule_interval(self.click, 0.001)
 
     def activate_autoclicker(self, event):
-        pyautogui.PAUSE = 0.001
         Clock.schedule_interval(self.click, 0.001)
 
     def stop_autoclicker(self, event):
         Clock.unschedule(self.click)
 
     def click(self, *args):
-        try:
-            location = pyautogui.locateOnScreen('/storage/emmc/DCIM/4.png')
-            pyautogui.click(location)
-        except pyautogui.ImageNotFoundException:
-            print('not pass')
-        try:
-            location = pyautogui.locateOnScreen('/storage/emmc/DCIM/5.png')
-            pyautogui.click(location)
-        except pyautogui.ImageNotFoundException:
-            print('not pass')
-        try:
-            location = pyautogui.locateOnScreen('/storage/emmc/DCIM/1.png')
-            pyautogui.click(location)
-            pyautogui.click(location)
-            location = pyautogui.locateOnScreen('/storage/emmc/DCIM/2.png')
-            pyautogui.click(location)
-            pyautogui.click(location)
-            location = pyautogui.locateOnScreen('/storage/emmc/DCIM/3.png')
-            pyautogui.click(location)
-            pyautogui.click(location)
-        except pyautogui.ImageNotFoundException:
-            print('not pass')
-
-
+	Clock.unschedule(self.click)   
+ 
 class MyApp(App):
 
     def build(self):
